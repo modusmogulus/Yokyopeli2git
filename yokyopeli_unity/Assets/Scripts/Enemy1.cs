@@ -1,6 +1,5 @@
 using UnityEngine;
 using Q3Movement;
-
 public class BillboardAndDamage : MonoBehaviour
 {
     public float moveSpeed = 5f;

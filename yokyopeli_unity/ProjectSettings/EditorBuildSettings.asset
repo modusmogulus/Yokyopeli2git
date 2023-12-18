@@ -26,5 +26,8 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/lab_a.unity
     guid: 41e8c226a72dc624faa4e4802b385de7
+  - enabled: 1
+    path: Assets/Scenes/kaareva_lopputekstit.unity
+    guid: ea70bcae2bfe8944194e44a8b898f1a1
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

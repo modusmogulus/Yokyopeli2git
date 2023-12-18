@@ -2,6 +2,8 @@
 using System.Collections;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.SceneManagement;
+using EasyTransition;
+
 namespace Q3Movement
 {
     /// <summary>
@@ -41,6 +43,7 @@ namespace Q3Movement
         [SerializeField] private MovementSettings m_AirSettings = new MovementSettings(7, 2, 2);
         [SerializeField] private MovementSettings m_StrafeSettings = new MovementSettings(1, 50, 50);
         [SerializeField] private Animator headAnimator;
+        public TransitionSettings deathTransition;
         /// <summary>
         /// Returns player's current speed.
         /// </summary>
@@ -155,7 +158,7 @@ namespace Q3Movement
 
         private void Die()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            TransitionManager.Instance().Transition(SceneManager.GetActiveScene().name, deathTransition, 0);
         }
 
         private void Regen()
@@ -268,12 +271,6 @@ namespace Q3Movement
                 transform.position = pos;
                 m_IsCrouching = false;
             }
-        }
-
-        public void Teleport(Vector3 pos)
-        {
-            Vector3 posi = pos;
-            transform.position = posi;
         }
 
         private void Climb()
@@ -498,6 +495,12 @@ namespace Q3Movement
 
             m_PlayerVelocity.x += accelspeed * targetDir.x;
             m_PlayerVelocity.z += accelspeed * targetDir.z;
+        }
+
+        public void Teleport(Vector3 pos)
+        {
+            Vector3 posi = pos;
+            transform.position = posi;
         }
     }
 }

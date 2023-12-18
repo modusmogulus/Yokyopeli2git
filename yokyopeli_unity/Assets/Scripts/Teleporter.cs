@@ -13,7 +13,7 @@ public class TeleportTrigger : MonoBehaviour
             // Teleport the player to the destination
             controller = other.GetComponent<Q3Movement.Q3PlayerController>();
             controller.Teleport(teleportDestination.transform.position);
-}
+    }
     }
     private void OnDrawGizmos()
     {

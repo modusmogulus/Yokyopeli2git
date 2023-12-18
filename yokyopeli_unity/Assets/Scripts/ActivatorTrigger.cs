@@ -65,7 +65,7 @@ public class ActivatorTrigger : MonoBehaviour
 
         if (isInRange && Input.GetKeyDown(KeyCode.E) && interact)
         {
-            if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
+            
 
             if (delay <= 0f)
                 ActivateObject();
@@ -79,6 +79,7 @@ public class ActivatorTrigger : MonoBehaviour
 
     private void ActivateObject()
     {
+        if (soundToPlay != "") { AudioManager.Instance.PlayAudio(soundToPlay); }
         gameObject.SetActive(activeOnEnter);
         if (destroyOnEnter) { Destroy(this); }
     }

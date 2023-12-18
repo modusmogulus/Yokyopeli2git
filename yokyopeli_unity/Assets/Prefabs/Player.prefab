@@ -103,15 +103,15 @@ MonoBehaviour:
     Acceleration: 50
     Deceleration: 50
   headAnimator: {fileID: 4823476144554600807}
+  deathTransition: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
   m_inRollZone: 0
   m_IsRolling: 0
-  climbCheckSize: {x: 1, y: 1, z: 1}
-  m_climbdetectorA: {fileID: 0}
-  m_climbdetectorB: {fileID: 0}
+  showControlTips: 0
   maxhp: 100
   health: 100
   damageFx: {fileID: 1887771150516029572}
   fallFx: {fileID: 2439551604984151890}
+  m_parkourEnabled: 1
 --- !u!114 &5330037063635123958
 MonoBehaviour:
   m_ObjectHideFlags: 0
