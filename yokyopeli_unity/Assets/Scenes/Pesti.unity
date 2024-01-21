@@ -1355,7 +1355,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalScale.x
-      value: 68.67953
+      value: 97.937004
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalScale.y
@@ -1363,15 +1363,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalScale.z
-      value: 99.7404
+      value: 171.80284
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.583
+      value: -7.963
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.51
+      value: 3.411
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1412,7 +1412,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: a93f2b063df9dec49a106f28243fe020, type: 2}
+      objectReference: {fileID: 2100000, guid: 2915d2557bfd53c4881e6c4ef593dac2, type: 2}
     - target: {fileID: 919132149155446097, guid: 850162c6b4067ee40a30f1dddb7e454e, type: 3}
       propertyPath: m_Name
       value: yk_simplehousecube 1 (2)
@@ -2403,7 +2403,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 05937ebf0d604ca499f30761f2be89ea, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: c2bea222a3056cd47ae6eba301a32015, type: 2}
+      objectReference: {fileID: 2100000, guid: 2915d2557bfd53c4881e6c4ef593dac2, type: 2}
     - target: {fileID: 919132149155446097, guid: 05937ebf0d604ca499f30761f2be89ea, type: 3}
       propertyPath: m_Name
       value: pyrobox_verynice_13stairs_real_size

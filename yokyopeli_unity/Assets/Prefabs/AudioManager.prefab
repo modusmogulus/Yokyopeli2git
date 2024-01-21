@@ -248,3 +248,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 570128c785e0c6140b622f59450c5738, type: 3}
     minPitch: 1
     maxPitch: 1
+  - AudioChan: 3
+    audioName: M_HucciGuiVI
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 2258feec5598d7746aa14f55fba5ad93, type: 3}
+    minPitch: 1
+    maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Poison
+    minVolume: 0.3
+    maxVolume: 0.3
+    audioClips:
+    - {fileID: 8300000, guid: 5a0226ec915438345ba456ff340f7804, type: 3}
+    minPitch: 1
+    maxPitch: 1

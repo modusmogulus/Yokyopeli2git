@@ -18,6 +18,8 @@ Pasi: Terve, taidat olla se meidän uusi puhelinmyyjä. Pääset tuota pikaa ty�
 title: Dodek1
 position: -400,-197
 ---
+<<declare $nice = 0>>
+
 Sinä: Moi, haluaisitteko puhua kirjakerhoon liittymisestä?
 <<jump Dodek2>>
 ===
@@ -37,7 +39,7 @@ position: -194,302
 Sinä: No niin herra huru-ukko, pysytäänpäs nyt jalat-maassa. Kirja-kerho voisi sopia teille mitä parahultaisimmin, ainakin puhutte varsin tuota... kirjallisesti.
 <<Act Kuulutus Porvari left center green>>
 Kuulutus: Nipin napin kaikki syömään! Ruoka-tauko kestää 5 minuuttia!
-<<SetGameInt 501 1>>
+<<SetGameInt 501 1>> //Lisää oven ruokailuun
 <<jump EndDia>>
 ===
 
@@ -45,9 +47,31 @@ title: Sylvester1
 position: 422,87
 ---
 <<Act Sylvester Sylvester right center green>>
-Sylvester: Iltaa rouva, herttinen sentään, äänesi on kuin sulosointu joka hellii korvakäytäviäni.
+Sylvester: Iltaa, herttinen sentään, äänesi on kuin sulosointu joka hellii korvakäytäviäni.
+*Suljit puhelimen vitutuksesta - voit yrittää uudestaan kun saat vitutustasoa laskettua*
 <<jump SylvesterEnd>>>
 ===
+
+title: SylvesterB1
+position: 422,87
+---
+*Soitit sylvesterille*
+<<wait 2>>
+Mutta kukaan ei vastannut...
+<<jump SylvesterEnd>>>
+===
+
+title: DodekB1
+position: 422,87
+---
+*Soitit Dodekahedralle*
+<<wait 1>>
+Dodekahedra: Haloo? Kas vain, soitit minulle takaisin kuten otaksuinkin.
+Dodekahedra: Minusta meidän olisi parasta nähdä kasvotusten sillä sinulla on taistelijan sielu... Usko pois, ymmärrän sinua
+
+<<jump SylvesterEnd>>>
+===
+
 
 title: SylvesterEnd
 position: 453,334
@@ -70,11 +94,13 @@ Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
 Teijo: No ei erityisemmin
 -> Tiuskaise
     Sinä: Ei yllätä Teijo, eipä nyky-aikuisilla juuri ole tapana lukea. Annetaan aivojen mädäntyä huvikseen. Mikä teitä vaivaa??
+    <<set $nice -= 1>>
 -> Mainosta
     Sinä: Meillä olisi tämmöinen Sinkku Boonus kaikille sinkuille että saatte ensimmäiset 2 kirjaa ilmaiseksi
     Teijo: Joo, mutta kun ei kiinnosta enkä ole sinkku.
     -> Tiuskaise
         Sinä: Älä ole niin isosuinen, avarra katsettasi nyky-aikuisilta puuttuu uteliaisuutta...🙄
+        <<set $nice -= 1>>
         <<jump EndDia>>
     -> Mainosta
         Sinä: Ei sitä koskaan tiedä milloin ero iskee! Saat kuule Teijo Sinkku Boonuksen etukäteen :D
@@ -125,6 +151,7 @@ Sinä: Joo elikkäs meillä on tälläinen kirjakerho jossa pääsee lukemaan mo
         Heikki: Ahh, ei ole. Olen ihan cishetero :3
         Heikki: Pakko myöntää etten ole mitenkään kummemmin kirjostunut kirjakerhoon liittymisestä mutta mukavaa päivänjatkoa.
         *Heikki ehti sulkea puhelimen :/*
+        <<set $nice += 1>>
         <<jump EndDia>>
     -> Älä kysy
         Heikki: Pakko myöntää etten ole mitenkään kummemmin kirjostunut kirjakerhoon liittymisestä mutta mukavaa päivänjatkoa :)
@@ -136,5 +163,61 @@ tags:
 colorID: 0
 position: 535,-175
 ---
-Herra Hucci Gui VI (HR-päällikkkö): Onko päivänne ollut työntäyteinen?
+
+<<if visited("HucciGuiVI") == false>>
+<<AMPlayAudio M_HucciGuiVI>>
+Herra Hucci Gui VI (HR-päällikkkö): Meidän täytyy puhua työpanoksestasi.
+<<if $nice <= 0>>
+Pasi: Mieti nyt vielä tarkkaan onko tämä työ sinulle, olemme huomannut että työpanoksesi on ollut melko... kehnoa. Haaskasit aikaa ja haukuit asiakastasi huru-ukoksi. Voisitko selittää mistä tämä käytös johtuu?
+<<endif>>
+<<if $nice > 0>>
+Pasi: Olet selvästi yrittänyt paljon mutta työn tuotoksesi on ollut... kehnoa. Haaskasit merkittävän paljon aikaa puhelussa joka ei johtanut uuteen asiakkaaseen. Voitko ammentaa minulle mistä on kyse?
+<<endif>>
+    -> Kerro Dodekahedrasta
+        Sinä:  Joku kummallinen hiippari vastasi puhelimeen ja kritisoi minua puhelimessa. Pakko myöntää että hän oli kyllä aika eriskummallinen tyyppi - latoi loruja kuin kalevalasta vinksahtanut Eminem.
+    -> Tiuskaise
+        Sinä: Minua hämmentää sillä ei minulla ei ole mitään josta ammentaa!! Tein työni kyllä ihan hyvin, sinun on ihan turha niuhottaa siinä herra humppaveikko.
+Pasi: Ymmärräthän että sinulla on voimassa karessi ettet pääse täältä ihan tuosta vaan pois jos haluat itseäsi elättää. Palaappa takaisin työn touhuun.
+<<AMPlayAudio M_Poison>>
+<<SetGameInt 502 1>> //Vaihtaa puhelinmyynti A -> puhelinmyynti B
+<<else>>
+Huci Gui VI: Takaisin töihin siitä. Mene tietokoneellesi ja sassiin
+<<endif>>
+
+<<jump EndDia>>
+===
+
+title: Kari
+tags: 
+colorID: 1
+position: 405,-450
+---
+
+Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
+Kari: Öö mikä helvetin krijakerho??
+Sinä: Joo elikkäs meillä on tälläinen kirjakerho <br> Kari: Hei odotas hetkinen, olen kuullut äänesi ennenkin. Olet 
+<<wait 0.5>> SE SAATANAN NÄPISTÄJÄNUORI!!! RYÖSTIT KAUPASTANI ENERGIAJUOMAA, SOITAN POLIISIT SAATANA
+    -> Pyydä anteeksi
+        Sinä: Anteeksi olen todella pahoillani... Minulla oli todella kova kiire ja olin ajatuksissani. Se oli vahinko, vannon... Olen pahoillani
+        <<set $nice += 2>>
+        Kari: *Kari ehti sulkea puhelimen*
+        <<jump EndDia>>
+    -> Tiuskaise
+        <<set $nice -= 2>>
+        Sinä: Haista sinä hemuli
+        Kari: *Kari sulki puhelimen*
+        <<jump EndDia>>
+===
+
+title: Tyonvartijat1
+tags: 
+colorID: 1
+position: 405,-450
+---
+
+<<if visited("Tyonvartijat1")>>
+Mitä pällistelet, mene KOTIIN
+<<else>>
+Työnvartijat: Mene kotiin NYT. Tulet sitten huomenna takaisin, se oli käsky.
+<<endif>>
 ===
