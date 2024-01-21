@@ -240,3 +240,11 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 2d4f3265cd7ab724ebb22dda341baa60, type: 3}
     minPitch: 1
     maxPitch: 1
+  - AudioChan: 3
+    audioName: M_Puhelin
+    minVolume: 0.5
+    maxVolume: 0.5
+    audioClips:
+    - {fileID: 8300000, guid: 570128c785e0c6140b622f59450c5738, type: 3}
+    minPitch: 1
+    maxPitch: 1

@@ -91,6 +91,7 @@ namespace Q3Movement
             m_CamTran = m_Camera.transform;
             m_MouseLook.Init(m_Tran, m_CamTran);
             headAnimator = m_Head.GetComponent<Animator>();
+            MainGameObject.Instance.playerController = this;
         }
 
         public IEnumerator CrouchCoroutine()
@@ -402,6 +403,7 @@ namespace Q3Movement
         // Handle ground movement.
         private void GroundMove()
         {
+            if (m_MouseLook.GetCursorLock() == false) { ApplyFriction(0.5f); headAnimator.SetBool("Running", false); return;  }
             // Do not apply friction if the player is queueing up the next jump
             if (!m_JumpQueued)
             {

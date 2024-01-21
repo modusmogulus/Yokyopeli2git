@@ -12,6 +12,11 @@ public class UIOnPlayerEnter : MonoBehaviour
     private Q3PlayerController playerController;
     private string interactTextString = "'E'";
     public KeyCode keything = KeyCode.E;
+    public bool requireGameIntKey = false;
+    public int gameIntKey = 0;
+    public byte gameIntValue = 0;
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -21,6 +26,9 @@ public class UIOnPlayerEnter : MonoBehaviour
             if (indicator != null)
             {
                 indicator.SetActive(true);
+            }
+            if (requireGameIntKey == true) {
+                MainGameObject.Instance.getGameIntKeyEquals(gameIntKey, gameIntValue);
             }
             isInRange = true;
             player = other.gameObject;

@@ -2831,7 +2831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3082383134894919933, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: _TextureWarpingFactor
-      value: 1
+      value: 0.166
       objectReference: {fileID: 0}
     - target: {fileID: 3082383134894919933, guid: 05f986135e1162642b32b7695b271c9f, type: 3}
       propertyPath: _VertexGridResolution
@@ -4847,7 +4847,8 @@ PrefabInstance:
       value: 0.35039157
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5532907458568573538, guid: 17e4c29e555fdd140baa2188f9f7737f, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4172478717071224402, guid: 17e4c29e555fdd140baa2188f9f7737f, type: 3}
       insertIndex: 1

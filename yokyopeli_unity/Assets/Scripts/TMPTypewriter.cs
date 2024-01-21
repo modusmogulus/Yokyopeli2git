@@ -1,7 +1,6 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-
 public class TypewriterEffect : MonoBehaviour
 {
     public float delay = 0.1f;
@@ -13,11 +12,16 @@ public class TypewriterEffect : MonoBehaviour
     private void Awake()
     {
         textComponent = GetComponent<TMP_Text>();
+        fullText = textComponent.text;
     }
 
     private void Start()
     {
-        fullText = textComponent.text;
+        textComponent = GetComponent<TMP_Text>();
+    }
+
+    private void OnEnable()
+    {
         StartCoroutine(ShowText());
     }
 

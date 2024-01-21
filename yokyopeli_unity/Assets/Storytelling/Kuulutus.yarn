@@ -1,0 +1,140 @@
+﻿title: Ryhti
+tags:
+position: -374,-449
+---
+<<Act Kuulutus Porvari left center green>>
+Kuulutus: Ryhtiä työntekijät ryhtiä! Valvomme jokaisen työntekijän ryhtiä valvontakameroilla
+<<jump EndDia>>
+===
+
+
+title: Pasi
+position: -114,-621
+---
+<<Act Pasi PasiUI left center green>>
+Pasi: Terve, taidat olla se meidän uusi puhelinmyyjä. Pääset tuota pikaa työn touhuun. Täytä vain työsopimus ja skannaa kelakorttisi niin voit ryhtyä hommiin. Tietokoneen salasana lukee pöntön vedessä. Ryhtiä ja rehtiä sinulle, se on mottoni.
+===
+
+title: Dodek1
+position: -400,-197
+---
+Sinä: Moi, haluaisitteko puhua kirjakerhoon liittymisestä?
+<<jump Dodek2>>
+===
+
+title: Dodek2
+position: -333,81
+---
+<<Act ??? yk_shadowguy right center purple>>
+???: Voi juku... Jatka vain markkinointia mutta minusta ylläsi on väärä puku. Haluaisin puhua kanssasi, sillä sinua häpeää kokonainen suku. Ja jos tahdot oppia, etkä vain asiakkaitasi nokkia voin kertoa missä piilee jutun juju. 
+???: Seuraa minua, kuin pyrstötähdellä, perässäni on komea letka. Ja nimeni? Herra Dodekahedra.
+<<jump Dodek3>>
+===
+
+title: Dodek3
+position: -194,302
+---
+Sinä: No niin herra huru-ukko, pysytäänpäs nyt jalat-maassa. Kirja-kerho voisi sopia teille mitä parahultaisimmin, ainakin puhutte varsin tuota... kirjallisesti.
+<<Act Kuulutus Porvari left center green>>
+Kuulutus: Nipin napin kaikki syömään! Ruoka-tauko kestää 5 minuuttia!
+<<SetGameInt 501 1>>
+<<jump EndDia>>
+===
+
+title: Sylvester1
+position: 422,87
+---
+<<Act Sylvester Sylvester right center green>>
+Sylvester: Iltaa rouva, herttinen sentään, äänesi on kuin sulosointu joka hellii korvakäytäviäni.
+<<jump SylvesterEnd>>>
+===
+
+title: SylvesterEnd
+position: 453,334
+---
+<<Hide Sylvester>>
+===
+
+title: EndDia
+position: -52,69
+---
+<<HideAll>>
+===
+
+title: Teijo1
+tags: puhelinmyynti
+colorID: 0
+position: 634,-455
+---
+Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
+Teijo: No ei erityisemmin
+-> Tiuskaise
+    Sinä: Ei yllätä Teijo, eipä nyky-aikuisilla juuri ole tapana lukea. Annetaan aivojen mädäntyä huvikseen. Mikä teitä vaivaa??
+-> Mainosta
+    Sinä: Meillä olisi tämmöinen Sinkku Boonus kaikille sinkuille että saatte ensimmäiset 2 kirjaa ilmaiseksi
+    Teijo: Joo, mutta kun ei kiinnosta enkä ole sinkku.
+    -> Tiuskaise
+        Sinä: Älä ole niin isosuinen, avarra katsettasi nyky-aikuisilta puuttuu uteliaisuutta...🙄
+        <<jump EndDia>>
+    -> Mainosta
+        Sinä: Ei sitä koskaan tiedä milloin ero iskee! Saat kuule Teijo Sinkku Boonuksen etukäteen :D
+        <<jump EndDia>>
+    -> Mielistele
+        Sinä: Anteeksi anteeksi Teijo, voimme sopia että saat kaksi Sinkku Boonusta ja papukaijan merkin ^.^
+        <<jump EndDia>>
+    -> Kiroile
+        *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(*z
+    <<jump EndDia>>
+-> Mielistele
+    Sinä: Selvä juttu Teijo, soitan huomenna uudestaan että jos se mieli muuttuu. Teillä on rentouttava ääni ^.^
+-> Kiroile
+    Sinä: *Sinun täytyy turhautua enemmän jotta voisit kiroilla töissä:(*z
+    <<jump EndDia>>
+===
+title: Villiam1
+tags: puhelinmyynti
+colorID: 0
+position: 161,-460
+---
+Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
+Villiam: Minkäslainen kirjakerho on kyseessä?
+*Sinulla ei ole harmainta aavistusta millaisesta kirjakerhosta on kyse*
+    -> Totuus
+        Sinä: Omaan toimenkuvaani ei kummemmin kuulu paneutuminen kirjallisuuden harrastajien sosialisaatioon. Elikkä öö, voisit kysyä ylemmältä johdolta millaisesta kirjakerhosta on kyse? Haluatko että annan numeron?
+        Villiam: Aika toistaitoista telemarkkinointia 🙄
+        <<jump EndDia>>
+    -> Hätävalhe
+        Sinä: On kyse sellaisesta tietokirjallisuuden ryhmätoiminnassa jossa pääsee varmasti perehtymään kiehtoviin aiheisiin muiden kanssa!
+        Villiam: Kuulostaa mahtavalta! Mikäs siinä, kuinka ilmoittaudun?
+        Sinä: Annat vain koko nimesi minulle niin hoidamme loput
+        Villiam: Koko nimeni on Villiam Tokuloukka
+        <<jump EndDia>>
+===
+title: Heikki
+tags: 
+colorID: 1
+position: 405,-450
+---
+
+Sinä: Moi, kiinnostaisiko teitä kirjakerhoon liittyminen?
+Heikki: No lähtökohtaisesti ei mutta voit toki kertoa kerhosta hieman lisää jos tahdot :3
+*Panet merkille että heikki antaa todella homoja viboja*
+Sinä: Joo elikkäs meillä on tälläinen kirjakerho jossa pääsee lukemaan monenlaista kirjallisuutta ja kirjakerhoon liittyminen on niin helppoa ettei tarvitse kuin antaa koko nimi ja osoite niin teemme loput puolestasi (Haluatko kysyä heikiltä kutsumanimeä?)
+    -> Kysy heikiltä kutsumanimeä
+        Sinä: Täytyy muuten tässä välissä varmuuden varalta kysyä onko sinulla mitään kutsumanimeä jolla haluaisit sinua kutsuttavan?
+        Heikki: Ahh, ei ole. Olen ihan cishetero :3
+        Heikki: Pakko myöntää etten ole mitenkään kummemmin kirjostunut kirjakerhoon liittymisestä mutta mukavaa päivänjatkoa.
+        *Heikki ehti sulkea puhelimen :/*
+        <<jump EndDia>>
+    -> Älä kysy
+        Heikki: Pakko myöntää etten ole mitenkään kummemmin kirjostunut kirjakerhoon liittymisestä mutta mukavaa päivänjatkoa :)
+        *Heikki ehti sulkea puhelimen :/*
+        <<jump EndDia>>
+===
+title: HucciGuiVI
+tags: 
+colorID: 0
+position: 535,-175
+---
+Herra Hucci Gui VI (HR-päällikkkö): Onko päivänne ollut työntäyteinen?
+===
